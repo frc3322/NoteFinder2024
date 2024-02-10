@@ -2,8 +2,8 @@
 import numpy as np
 import cv2 as cv
 import cameraServer
-import pipeline
-import networkTables
+import Pipeline as pipeline
+import NTInstance as networkTables
 
 
 
