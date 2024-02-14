@@ -22,18 +22,20 @@ if __name__ == "__main__":
         if not ret:
             print("Bad frame... ending")
             break
-        
-        areas, centers = pipeline.run_pipeline(src)
+        try:
+            areas, centers = pipeline.run_pipeline(src)
 
-        areaPub.set(areas)
+            areaPub.set(areas)
 
-        xs = [i[0] for i in centers]
-        ys = [i[1] for i in centers]
+            xs = [i[0] for i in centers]
+            ys = [i[1] for i in centers]
 
-        xPub.set(xs)
-        yPub.set(ys)
+            xPub.set(xs)
+            yPub.set(ys)
 
-        output.putFrame(src)
+            output.putFrame(src)
+        except:
+            print("code don't work")
 
         key = cv.waitKey(1) 
         if key == ord('q'):
